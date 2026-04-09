@@ -9,9 +9,17 @@ jobs:
   pr-close:
     runs-on: ubuntu-latest
     steps:
-      - name: 删除预览分支
-        uses: dev-drprasad/delete-tag-and-release@v0.1.2
-        with:
-          delete_branch: true
-          branch_name: pages/pr${{ github.event.number }}
-          github_token: ${{ secrets.PAT }}
+      - name: 删除 pr 目录
+        run: |
+          PR_DIR=prs/pr${{ github.event.number }}
+          echo "删除 $PR_DIR"
+          
+          rm -rf $PR_DIR
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add -A
+          git commit -m "🧹 remove preview $PR_DIR" || echo "Nothing to commit"
+          
+          git push
