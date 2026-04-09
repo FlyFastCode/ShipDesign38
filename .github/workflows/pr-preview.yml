@@ -40,7 +40,7 @@ jobs:
           github_token: ${{ secrets.PAT }}  # 复用你之前创建的PAT
           publish_branch: pages
           publish_dir: ./dist
-          destination_dir: pr${{ github.event.number }}
+          destination_dir: prs/pr${{ github.event.number }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           keep_files: true
@@ -50,6 +50,6 @@ jobs:
         with:
           message: |
             ✅ PR #${{ github.event.number }} 预览已生成！
-            📦 构建分支：pages/pr${{ github.event.number }}
+            📦 构建分支：pages/prs/pr${{ github.event.number }}
             ⚠️  仅用于测试，请勿直接访问正式环境
           GITHUB_TOKEN: ${{ secrets.PAT }}
