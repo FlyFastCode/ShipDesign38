@@ -62,3 +62,140 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Calculator Styles */
+.calculator {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.calculator h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.number-input {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.1em;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.number-input:focus {
+  border-color: #646cff;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.operator-btn {
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+.sub-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.sub-btn:hover {
+  background-color: #da3226;
+  border-color: #da3226;
+}
+
+.mul-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.mul-btn:hover {
+  background-color: #e68900;
+  border-color: #e68900;
+}
+
+.div-btn {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.div-btn:hover {
+  background-color: #8e24aa;
+  border-color: #8e24aa;
+}
+
+.clear-btn {
+  background-color: #666;
+  color: white;
+}
+
+.clear-btn:hover {
+  background-color: #555;
+  border-color: #555;
+}
+
+.result {
+  font-size: 1.5em;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  border: 2px solid #646cff;
+}
+
+.result-value {
+  font-weight: bold;
+  color: #646cff;
+}
+
+.result.error {
+  border-color: #f44336;
+}
+
+.result.error .result-value {
+  color: #f44336;
+}
+
+@media (prefers-color-scheme: light) {
+  .calculator {
+    background-color: #f5f5f5;
+  }
+  .number-input {
+    background-color: #fff;
+    color: #213547;
+    border-color: #ddd;
+  }
+  .result {
+    background-color: #fff;
+  }
+}
