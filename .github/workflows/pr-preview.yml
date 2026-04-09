@@ -27,7 +27,7 @@ jobs:
         run: |
           # 针对Vite项目，动态修改vite.config.ts的base
           PR_NUMBER=${{ github.event.number }}
-          sed -i "s|base:.*|base: '/ShipDesign38/pages/pr${PR_NUMBER}/',|" vite.config.ts
+          sed -i "s|base:.*|base: '/ShipDesign38/prs/pr${PR_NUMBER}/',|" vite.config.ts
           # 验证修改是否生效
           cat vite.config.ts
 
