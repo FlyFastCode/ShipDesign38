@@ -9,10 +9,13 @@ jobs:
   pr-preivew:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出代码
+      # ✅ 检出 PR 分支代码（而不是 main）
+      - name: Checkout PR code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0  
 
       - name: 设置Node.js
         uses: actions/setup-node@v4
