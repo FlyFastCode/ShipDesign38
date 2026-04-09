@@ -135,6 +135,26 @@ button:focus-visible {
   border-color: #da3226;
 }
 
+.mul-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.mul-btn:hover {
+  background-color: #e68900;
+  border-color: #e68900;
+}
+
+.div-btn {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.div-btn:hover {
+  background-color: #8e24aa;
+  border-color: #8e24aa;
+}
+
 .clear-btn {
   background-color: #666;
   color: white;
@@ -156,6 +176,14 @@ button:focus-visible {
 .result-value {
   font-weight: bold;
   color: #646cff;
+}
+
+.result.error {
+  border-color: #f44336;
+}
+
+.result.error .result-value {
+  color: #f44336;
 }
 
 @media (prefers-color-scheme: light) {
