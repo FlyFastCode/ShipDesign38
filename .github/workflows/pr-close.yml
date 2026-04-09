@@ -9,6 +9,11 @@ jobs:
   pr-close:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: pages
+          
       - name: 删除 pr 目录
         run: |
           PR_DIR=prs/pr${{ github.event.number }}
